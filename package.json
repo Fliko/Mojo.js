@@ -1,0 +1,23 @@
+{
+  "name": "enginetesting",
+  "version": "1.0.0",
+  "description": "starts up tests for engine",
+  "main": "engine/engine.js",
+  "scripts": {
+    "test": "mocha engine/specs/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fliko/Mojo.js.git"
+  },
+  "author": "Trace Baxter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fliko/Mojo.js/issues"
+  },
+  "homepage": "https://github.com/Fliko/Mojo.js#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  }
+}

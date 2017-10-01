@@ -1,17 +1,29 @@
 class Message {
   constructor() {
-    this.head = null;
     this.tail = null;
+    this.head = this.tail;
   }
-  getFirst() {
-    return this.head;
+  getMessage() {
+    return this.tail === null ? null : this.tail.data;
   }
   removeItem() {
-    this.head = this.head.next;
+    if(this.tail === null) {
+      return;
+    }
+    this.tail = this.tail.prev;
+    this.tail.next = null;
   }
   addItem(data) {
-    var item = {data: data, next: this.head || this.tail};
-    this.head = item;
+    var item = {data: data,
+                next: this.tail,
+                prev: null};
+    if(!this.head) {
+      this.head = item;
+      this.tail = this.head
+    } else {
+      this.head.prev = item;
+      this.head = item;
+    }
   }
 }
 class MOJO {
@@ -19,6 +31,7 @@ class MOJO {
 
   }
 }
+module.exports.Message = Message;
 // class Engine extends Mojo{
 //   constructor(canvas) {
 //     const gl = canvas.getContext("webgl");
